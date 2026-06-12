@@ -10,7 +10,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Launch-Live_Demo-5A2132?style=for-the-badge&logo=vercel)](https://langux.netlify.app)
 
-<img src="https://via.placeholder.com/1200x600/5A2132/EFE9E9?text=LanguX+Translation+Engine" alt="LanguX Preview" width="100%" />
+<img src="preview.png" alt="LanguX Preview" width="100%" />
 
 </div>
 
