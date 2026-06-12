@@ -1,5 +1,5 @@
 /**
- * Langux — AI Language Translation Tool
+ * LanguX — AI Language Translation Tool
  * Powered by MyMemory Translation API
  */
 

@@ -1,7 +1,7 @@
 <div align="center">
 
-# 🌍 Langux
-**Langux — AI-Powered Language Translation Tool**
+# 🌍 LanguX
+**LanguX — AI-Powered Language Translation Tool**
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -10,7 +10,7 @@
 
 [![Live Demo](https://img.shields.io/badge/Launch-Live_Demo-5A2132?style=for-the-badge&logo=vercel)](https://langux.netlify.app)
 
-<img src="https://via.placeholder.com/1200x600/5A2132/EFE9E9?text=Langux+Translation+Engine" alt="Langux Preview" width="100%" />
+<img src="https://via.placeholder.com/1200x600/5A2132/EFE9E9?text=LanguX+Translation+Engine" alt="LanguX Preview" width="100%" />
 
 </div>
 
@@ -18,9 +18,9 @@
 
 ## 📖 About
 
-**Langux** is a premium, high-performance web-based AI translation engine built to break language barriers. Designed with a stunning "Masterpiece Red" glassmorphism aesthetic, Langux allows you to translate massive blocks of text (up to 50,000 characters) flawlessly across 100+ global languages. 
+**LanguX** is a premium, high-performance web-based AI translation engine built to break language barriers. Designed with a stunning "Masterpiece Red" glassmorphism aesthetic, LanguX allows you to translate massive blocks of text (up to 50,000 characters) flawlessly across 100+ global languages. 
 
-Powered by intelligent background text-chunking and an ultra-fast streaming ElevenLabs API integration, Langux doesn't just translate your words—it speaks them back to you using a studio-quality AI voice profile.
+Powered by intelligent background text-chunking and an ultra-fast streaming ElevenLabs API integration, LanguX doesn't just translate your words—it speaks them back to you using a studio-quality AI voice profile.
 
 ---
 
@@ -41,7 +41,7 @@ Powered by intelligent background text-chunking and an ultra-fast streaming Elev
 
 ## 🌐 Languages Supported (100+)
 
-Langux supports a massive dictionary of global languages. Select from:
+LanguX supports a massive dictionary of global languages. Select from:
 
 Afrikaans, Albanian, Amharic, Arabic, Armenian, Azerbaijani, Basque, Belarusian, Bengali, Bosnian, Bulgarian, Catalan, Cebuano, Chinese (Simplified), Chinese (Traditional), Corsican, Croatian, Czech, Danish, Dutch, English, Esperanto, Estonian, Finnish, French, Frisian, Galician, Georgian, German, Greek, Gujarati, Haitian Creole, Hausa, Hawaiian, Hebrew, Hindi, Hmong, Hungarian, Icelandic, Igbo, Indonesian, Irish, Italian, Japanese, Javanese, Kannada, Kazakh, Khmer, Kinyarwanda, Korean, Kurdish, Kyrgyz, Lao, Latin, Latvian, Lithuanian, Luxembourgish, Macedonian, Malagasy, Malay, Malayalam, Maltese, Maori, Marathi, Mongolian, Myanmar (Burmese), Nepali, Norwegian, Nyanja (Chichewa), Odia (Oriya), Pashto, Persian, Polish, Portuguese, Punjabi, Romanian, Russian, Samoan, Scots Gaelic, Serbian, Sesotho, Shona, Sindhi, Sinhala, Slovak, Slovenian, Somali, Spanish, Sundanese, Swahili, Swedish, Tagalog (Filipino), Tajik, Tamil, Tatar, Telugu, Thai, Turkish, Turkmen, Ukrainian, Urdu, Uyghur, Uzbek, Vietnamese, Welsh, Xhosa, Yiddish, Yoruba, Zulu.
 
@@ -85,7 +85,7 @@ Afrikaans, Albanian, Amharic, Arabic, Armenian, Azerbaijani, Basque, Belarusian,
 ## 📂 Project Structure
 
 ```text
-Langux/
+LanguX/
 │
 ├── index.html        # The main structural markup and UI
 ├── style.css         # All styling, animations, and glassmorphism themes
@@ -98,7 +98,7 @@ Langux/
 
 ## 🔌 API Documentation
 
-Langux relies on a multi-tiered API approach for stability and speed:
+LanguX relies on a multi-tiered API approach for stability and speed:
 1. **Google Translate (Primary):** `https://translate.googleapis.com/translate_a/single`
 2. **MyMemory Translation (Fallback):** `https://api.mymemory.translated.net/get`
 3. **ElevenLabs TTS (English Audio):** `https://api.elevenlabs.io/v1/text-to-speech/N2lVS1w4EtoT3dr4eOWO/stream` (Powered by the `eleven_turbo_v2_5` model for latency optimization).
