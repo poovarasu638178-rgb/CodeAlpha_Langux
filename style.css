@@ -668,8 +668,8 @@ body::before {
   .output-text { min-height: 100px; font-size: 15px; }
   .toast-container { left: 20px; right: 20px; bottom: 20px; }
   .toast { text-align: center; }
-  /* Allow footer to wrap on mobile so it doesn't break layout */
-  .footer { white-space: normal; font-size: 12px; }
+  /* Keep footer on a single line on mobile and adjust size to prevent overflow */
+  .footer { white-space: nowrap; font-size: 10px; letter-spacing: 0.1px; }
 }
 
 @media (max-width: 480px) {
