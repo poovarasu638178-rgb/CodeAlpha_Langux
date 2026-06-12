@@ -669,7 +669,7 @@ body::before {
   .toast-container { left: 20px; right: 20px; bottom: 20px; }
   .toast { text-align: center; }
   /* Keep footer on a single line on mobile and adjust size to prevent overflow */
-  .footer { white-space: nowrap; font-size: 10px; letter-spacing: 0.1px; }
+  .footer { white-space: nowrap; font-size: clamp(10px, 3.2vw, 13px); letter-spacing: 0.1px; }
 }
 
 @media (max-width: 480px) {
