@@ -17,23 +17,23 @@
 
 ## 📖 About
 
-**LanguX** is a premium, high-performance web-based AI translation engine designed with a minimalist glassmorphism interface in a warm Soft Cream (`#F3EADB`) and solid Black (`#111111`) layout. LanguX allows users to translate massive blocks of text up to 50,000 characters flawlessly across 100+ global languages. 
+**LanguX** is a high-performance web-based AI translation engine built with a minimalist glassmorphism interface in a warm Soft Cream (`#F3EADB`) and solid Black (`#111111`) layout. It translates text blocks up to 50,000 characters across 100+ global languages. 
 
-Equipped with intelligent sentence-aware text chunking and ultra-fast streaming ElevenLabs API integration, LanguX doesn't just translate text—it speaks English translations back to you in a studio-quality AI voice, with a native device fallback for other global languages.
+Equipped with sentence-aware text chunking and streaming ElevenLabs API integration, LanguX translates your input and reads English translations back to you in a studio-quality AI voice.
 
 ---
 
 ## ✨ Features
 
-✅ **Multi-Language Support:** Flawlessly translate between over 100 global languages.
-✅ **Instant Translation:** Automatic debounced translation triggers as you type, alongside standard manual translation.
-✅ **50,000 Character Limit:** Paste huge text documents without performance degradation.
-✅ **Clean UI:** Single-viewport, compact grid layout with card glassmorphism and micro-animations, optimized to fit laptop and mobile screen resolutions without vertical scrolling.
-✅ **Smart Sentence Chunking:** Automatically segments text at sentence boundaries into ~1500 character units to avoid translation API packet drops and constraints.
-✅ **Custom Speech Synthesis (TTS):** Premium ElevenLabs API streaming integration for English audio playback, with automatic browser-native fallback for global languages.
-✅ **Keyboard Shortcuts:** Fast translation (`Cmd/Ctrl + Enter`) and copy (`Cmd/Ctrl + Shift + C`) command bindings.
-✅ **Searchable Custom Dropdowns:** Elegant searchable selector dropdowns for swift language discovery.
-✅ **Copy-to-Clipboard & Toasts:** Instant copies with premium animated status notifications.
+✅ **Multi-Language Support**: Instantly translate text between over 100 global languages.
+✅ **Instant Translation**: Trigger automatic debounced translations as you type, or use manual translation controls.
+✅ **50,000 Character Limit**: Process large documents easily without experiencing browser lag or performance drops.
+✅ **Clean UI**: Interact with a single-viewport, glassmorphism layout optimized for both laptop and mobile screens.
+✅ **Smart Sentence Chunking**: Split input text at sentence boundaries into 1500-character units to prevent API request drops.
+✅ **Custom Speech Synthesis (TTS)**: Stream premium English audio playback using the ElevenLabs API, or fallback to native device TTS.
+✅ **Keyboard Shortcuts**: Execute quick translations using `Cmd/Ctrl + Enter` and copy output using `Cmd/Ctrl + Shift + C`.
+✅ **Searchable Custom Dropdowns**: Discover and filter target languages quickly using searchable select menus.
+✅ **Copy-to-Clipboard & Toasts**: Copy your translation output with one click and see animated toast notifications.
 
 ---
 
@@ -55,16 +55,16 @@ graph TD
   I -->|No| K[Web Speech API Native Fallback]
 ```
 
-1. **Translation API Pipeline:** On input, text is fed into a chunking pipeline. If the text size exceeds 1,500 characters, it is parsed at boundary punctuation marks into discrete chunks to prevent API constraints.
-2. **Language Request/Response Flow:** Each chunk is dispatched asynchronously to the Google Translate API endpoint. In the event of a network drop, it automatically falls back to the MyMemory API.
-3. **Response Assembly:** The resolved translated text chunks are merged and pushed to the UI with a reveal transition effect.
-4. **TTS Audio Streaming:** English translation audios are requested from the ElevenLabs TTS API using the low-latency `eleven_turbo_v2_5` model, accelerated to a natural `1.2x` speaking pace, and cached locally.
+1. **Translation API Pipeline**: Splits text input exceeding 1,500 characters at sentence boundaries into smaller chunks to bypass API payload size constraints.
+2. **Request & Response Flow**: Dispatches text chunks asynchronously to the Google Translate API, falling back to the MyMemory API if a network error occurs.
+3. **Response Assembly**: Combines the translated segments and updates the UI with an elegant text reveal transition effect.
+4. **TTS Audio Streaming**: Streams English speech synthesis via ElevenLabs' low-latency `eleven_turbo_v2_5` model at a natural `1.2x` pace, caching the audio locally.
 
 ---
 
 ## 🌐 Supported Languages (100+)
 
-LanguX supports all of the following languages:
+LanguX supports translation across all of the following languages:
 
 Afrikaans, Albanian, Amharic, Arabic, Armenian, Azerbaijani, Basque, Belarusian, Bengali, Bosnian, Bulgarian, Catalan, Cebuano, Chinese (Simplified), Chinese (Traditional), Corsican, Croatian, Czech, Danish, Dutch, English, Esperanto, Estonian, Finnish, French, Frisian, Galician, Georgian, German, Greek, Gujarati, Haitian Creole, Hausa, Hawaiian, Hebrew, Hindi, Hmong, Hungarian, Icelandic, Igbo, Indonesian, Irish, Italian, Japanese, Javanese, Kannada, Kazakh, Khmer, Kinyarwanda, Korean, Kurdish, Kyrgyz, Lao, Latin, Latvian, Lithuanian, Luxembourgish, Macedonian, Malagasy, Malay, Malayalam, Maltese, Maori, Marathi, Mongolian, Myanmar (Burmese), Nepali, Norwegian, Nyanja (Chichewa), Odia (Oriya), Pashto, Persian, Polish, Portuguese, Punjabi, Romanian, Russian, Samoan, Scots Gaelic, Serbian, Sesotho, Shona, Sindhi, Sinhala, Slovak, Slovenian, Somali, Spanish, Sundanese, Swahili, Swedish, Tagalog (Filipino), Tajik, Tamil, Tatar, Telugu, Thai, Turkish, Turkmen, Ukrainian, Urdu, Uyghur, Uzbek, Vietnamese, Welsh, Xhosa, Yiddish, Yoruba, Zulu.
 
