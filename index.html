@@ -264,16 +264,38 @@
           </select>
         </div>
       </div>
-      <div class="textarea-wrapper">
-        <label for="input-text" class="visually-hidden">Text to translate</label>
-        <textarea
-          id="input-text"
-          class="input-textarea"
-          placeholder="Start typing..."
-          maxlength="50000"
-          rows="1"
-        ></textarea>
-        <span id="char-counter" class="char-counter">0 / 50000</span>
+      <div class="workspace-grid">
+        <div class="textarea-wrapper">
+          <label for="input-text" class="visually-hidden">Text to translate</label>
+          <textarea
+            id="input-text"
+            class="input-textarea"
+            placeholder="Start typing..."
+            maxlength="50000"
+            rows="1"
+          ></textarea>
+          <span id="char-counter" class="char-counter">0 / 50000</span>
+        </div>
+
+        <div class="output-wrapper">
+          <div class="output-actions">
+            <button type="button" id="listen-btn" class="action-btn" aria-label="Listen to translation" data-tooltip="Listen" disabled>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M15.54 8.46C16.4774 9.39764 17.004 10.6692 17.004 11.995C17.004 13.3208 16.4774 14.5924 15.54 15.53M19.07 4.93C20.9447 6.80527 21.9979 9.34835 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <button type="button" id="copy-btn" class="action-btn" aria-label="Copy translation" data-tooltip="Copy">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M5 15H4C2.89543 15 2 14.1046 2 13V4C2 2.89543 2.89543 2 4 2H13C14.1046 2 15 2.89543 15 4V5" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </button>
+          </div>
+          <div id="output-text" class="output-text">
+            <span class="output-placeholder">Translation will appear here...</span>
+          </div>
+        </div>
       </div>
 
       <button type="button" id="translate-btn" class="translate-btn" disabled>
@@ -289,32 +311,6 @@
           <span>Translating...</span>
         </span>
       </button>
-
-      <div class="divider">
-        <span class="divider-line"></span>
-        <span class="divider-text">Translation</span>
-        <span class="divider-line"></span>
-      </div>
-
-      <div class="output-wrapper">
-        <div class="output-actions">
-          <button type="button" id="listen-btn" class="action-btn" aria-label="Listen to translation" data-tooltip="Listen" disabled>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M15.54 8.46C16.4774 9.39764 17.004 10.6692 17.004 11.995C17.004 13.3208 16.4774 14.5924 15.54 15.53M19.07 4.93C20.9447 6.80527 21.9979 9.34835 21.9979 12C21.9979 14.6516 20.9447 17.1947 19.07 19.07" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <button type="button" id="copy-btn" class="action-btn" aria-label="Copy translation" data-tooltip="Copy">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="9" y="9" width="13" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M5 15H4C2.89543 15 2 14.1046 2 13V4C2 2.89543 2.89543 2 4 2H13C14.1046 2 15 2.89543 15 4V5" stroke="currentColor" stroke-width="1.5"/>
-            </svg>
-          </button>
-        </div>
-        <div id="output-text" class="output-text">
-          <span class="output-placeholder">Translation will appear here...</span>
-        </div>
-      </div>
 
     </div>
 

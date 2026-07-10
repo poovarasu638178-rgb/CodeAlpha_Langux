@@ -58,25 +58,27 @@ body::before {
   position: relative;
   z-index: 1;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 60px 24px 40px;
+  padding: 16px 24px 12px;
+  overflow: hidden;
 }
 
 /* ---- Main card: glass with dark tint ---- */
 .card {
   width: 100%;
-  max-width: 680px;
+  max-width: 960px;
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 20px;
-  padding: 40px;
+  padding: 24px 32px;
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.4) inset,
     0 32px 80px rgba(17, 17, 17, 0.08);
@@ -85,7 +87,7 @@ body::before {
 /* ---- Header ---- */
 .header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
 }
 
 .logo {
@@ -109,7 +111,7 @@ body::before {
 /* Premium serif title */
 .logo-text {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 700;
   letter-spacing: -0.5px;
   color: #111111;
@@ -117,9 +119,9 @@ body::before {
 }
 
 .tagline {
-  margin-top: 8px;
+  margin-top: 4px;
   font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: rgba(17, 17, 17, 0.75);
   letter-spacing: 0.02em;
@@ -130,7 +132,16 @@ body::before {
   display: flex;
   gap: 12px;
   align-items: center;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
+}
+
+/* ---- Workspace Grid ---- */
+.workspace-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-bottom: 12px;
 }
 
 .select-wrapper {
@@ -309,7 +320,9 @@ body::before {
 
 .input-textarea {
   width: 100%;
-  min-height: 160px;
+  height: 140px;
+  min-height: 140px;
+  max-height: 140px;
   background: rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(17, 17, 17, 0.15);
   border-radius: 12px;
@@ -361,14 +374,14 @@ body::before {
   border: none !important;
   opacity: 1 !important;
   width: 100% !important;
-  height: 54px !important;
+  height: 48px !important;
   border-radius: 12px !important;
   font-family: 'DM Sans', sans-serif !important;
   font-size: 16px !important;
   font-weight: 700 !important;
   letter-spacing: 0.5px !important;
   cursor: pointer !important;
-  margin-top: 14px !important;
+  margin-top: 8px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -446,12 +459,15 @@ body::before {
 /* ---- Output Box ---- */
 .output-wrapper {
   position: relative;
-  margin-top: 14px;
+  margin-top: 0;
 }
 
 .output-text {
   width: 100%;
+  height: 140px;
   min-height: 140px;
+  max-height: 140px;
+  overflow-y: auto;
   background: rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(17, 17, 17, 0.15);
   border-radius: 12px;
@@ -591,11 +607,11 @@ body::before {
   font-weight: 600;
   color: rgba(17, 17, 17, 0.6);
   letter-spacing: 0.3px;
-  margin-top: 48px;
-  padding-top: 24px;
+  margin-top: 16px;
+  padding-top: 12px;
   border-top: 1px solid rgba(17, 17, 17, 0.1);
   width: 100%;
-  max-width: 680px;
+  max-width: 960px;
   /* Prevent wrapping */
   white-space: nowrap;
 }
@@ -658,22 +674,22 @@ body::before {
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {
-  .app { padding: 40px 16px; }
-  .card { padding: 24px; border-radius: 16px; }
-  .logo-text { font-size: 30px; }
+  .app { height: auto; min-height: 100vh; padding: 24px 16px; overflow: auto; }
+  .card { padding: 20px; border-radius: 16px; }
+  .workspace-grid { grid-template-columns: 1fr; gap: 12px; margin-bottom: 12px; }
+  .logo-text { font-size: 26px; }
   .swap-btn { width: 44px; height: 44px; }
-  .input-textarea { min-height: 120px; font-size: 15px; }
-  .translate-btn, #translate-btn { height: 50px !important; font-size: 15px !important; }
-  .output-text { min-height: 100px; font-size: 15px; }
+  .input-textarea { height: 120px; min-height: 120px; max-height: 120px; font-size: 15px; }
+  .translate-btn, #translate-btn { height: 46px !important; font-size: 15px !important; margin-top: 8px !important; }
+  .output-text { height: 120px; min-height: 120px; max-height: 120px; font-size: 15px; }
   .toast-container { left: 20px; right: 20px; bottom: 20px; }
   .toast { text-align: center; }
-  /* Keep footer on a single line on mobile and adjust size and letter spacing to prevent overflow */
-  .footer { white-space: nowrap; font-size: clamp(8.5px, 2.6vw, 12px); letter-spacing: -0.1px; }
+  .footer { white-space: nowrap; font-size: clamp(8.5px, 2.6vw, 12px); letter-spacing: -0.1px; margin-top: 16px; }
 }
 
 @media (max-width: 480px) {
-  .app { padding: 40px 16px 32px; }
-  .logo-text { font-size: 26px; }
-  .tagline { font-size: 14px; }
+  .app { padding: 16px 12px; }
+  .logo-text { font-size: 22px; }
+  .tagline { font-size: 13px; }
   .language-row { gap: 8px; }
 }
