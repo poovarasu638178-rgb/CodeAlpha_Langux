@@ -1,14 +1,15 @@
 <div align="center">
 
-# 🌍 LanguX
-**LanguX — AI-Powered Language Translation Tool**
+# 🌍 LanguX — AI Language Translator
+**Translate anything, instantly.**
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![AI Translation API](https://img.shields.io/badge/API-AI_Translation-blue?style=for-the-badge&logo=google-translate)
 ![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-[![Live Demo](https://img.shields.io/badge/Launch-Live_Demo-5A2132?style=for-the-badge&logo=vercel)](https://langux.netlify.app)
+[![Live Demo](https://img.shields.io/badge/Launch-Live_Demo-5A2132?style=for-the-badge&logo=vercel)](https://langux.vercel.app/)
 
 <img src="preview.png" alt="LanguX Preview" width="100%" />
 
@@ -18,30 +19,54 @@
 
 ## 📖 About
 
-**LanguX** is a premium, high-performance web-based AI translation engine built to break language barriers. Designed with a stunning "Masterpiece Red" glassmorphism aesthetic, LanguX allows you to translate massive blocks of text (up to 50,000 characters) flawlessly across 100+ global languages. 
+**LanguX** is a premium, high-performance web-based AI translation engine designed with a minimalist glassmorphism interface in a warm Soft Cream (`#F3EADB`) and solid Black (`#111111`) layout. LanguX allows users to translate massive blocks of text up to 50,000 characters flawlessly across 100+ global languages. 
 
-Powered by intelligent background text-chunking and an ultra-fast streaming ElevenLabs API integration, LanguX doesn't just translate your words—it speaks them back to you using a studio-quality AI voice profile.
+Equipped with intelligent sentence-aware text chunking and ultra-fast streaming ElevenLabs API integration, LanguX doesn't just translate text—it speaks English translations back to you in a studio-quality AI voice, with a native device fallback for other global languages.
 
 ---
 
 ## ✨ Features
 
-✅ **Unlimited Translation Engine:** Massive 50,000 character limit. Paste entire essays or documents without crashing.
-✅ **Smart Chunking:** Intelligently splits huge text blocks at sentence boundaries to bypass standard API limitations, reassembling them flawlessly.
-✅ **Custom "Jarvis" AI Voice:** Integrated with ElevenLabs' Turbo v2.5 model for ultra-low latency, studio-quality British male voice playback for English translations.
-✅ **Local TTS Fallback:** Smart fallback to your device's native Web Speech API for all other 100+ languages to ensure accurate pronunciation globally.
-✅ **Searchable Custom Dropdowns:** Beautiful, fully custom-built language selectors with built-in live search filtering.
-✅ **Premium Aesthetic UI:** Glassmorphism design, blur backdrops, soft shadows, and micro-animations styled in a bespoke Masterpiece Red (`#5A2132`) and Dirty White (`#EFE9E9`) color palette.
-✅ **Instant Language Swapping:** One-click swapping between source and target languages.
-✅ **1-Click Copy:** Seamlessly copy your translations to your clipboard with animated toast notifications.
-✅ **Auto-Resizing Input:** The text area dynamically grows as you type or paste content.
-✅ **Character Tracking:** Live character counter to keep track of your 50k limit.
+✅ **Multi-Language Support:** Flawlessly translate between over 100 global languages.
+✅ **Instant Translation:** Automatic debounced translation triggers as you type, alongside standard manual translation.
+✅ **50,000 Character Limit:** Paste huge text documents without performance degradation.
+✅ **Clean UI:** Single-viewport, compact grid layout with card glassmorphism and micro-animations, optimized to fit laptop and mobile screen resolutions without vertical scrolling.
+✅ **Smart Sentence Chunking:** Automatically segments text at sentence boundaries into ~1500 character units to avoid translation API packet drops and constraints.
+✅ **Custom Speech Synthesis (TTS):** Premium ElevenLabs API streaming integration for English audio playback, with automatic browser-native fallback for global languages.
+✅ **Keyboard Shortcuts:** Fast translation (`Cmd/Ctrl + Enter`) and copy (`Cmd/Ctrl + Shift + C`) command bindings.
+✅ **Searchable Custom Dropdowns:** Elegant searchable selector dropdowns for swift language discovery.
+✅ **Copy-to-Clipboard & Toasts:** Instant copies with premium animated status notifications.
 
 ---
 
-## 🌐 Languages Supported (100+)
+## ⚙️ How It Works
 
-LanguX supports a massive dictionary of global languages. Select from:
+```mermaid
+graph TD
+  A[User Types/Inputs Text] -->|Debounce / Manual Trigger| B{Text Length > 1500?}
+  B -->|Yes| C[Sentence-Aware Chunker]
+  B -->|No| D[Single Translation Segment]
+  C -->|Chunck Arrays| E[Google Translate API Client]
+  D -->|Single Query| E
+  E -->|Network Fail Fallback| F[MyMemory Translation API]
+  E -->|Success Response| G[Compile & Assemble Translations]
+  F -->|Fallback Success| G
+  G -->|Display UI Output| H[Output Box & Text Reveal Animation]
+  H -->|User Clicks Listen| I{Target is English?}
+  I -->|Yes| J[ElevenLabs TTS Turbo API Stream]
+  I -->|No| K[Web Speech API Native Fallback]
+```
+
+1. **Translation API Pipeline:** On input, text is fed into a chunking pipeline. If the text size exceeds 1,500 characters, it is parsed at boundary punctuation marks into discrete chunks to prevent API constraints.
+2. **Language Request/Response Flow:** Each chunk is dispatched asynchronously to the Google Translate API endpoint. In the event of a network drop, it automatically falls back to the MyMemory API.
+3. **Response Assembly:** The resolved translated text chunks are merged and pushed to the UI with a reveal transition effect.
+4. **TTS Audio Streaming:** English translation audios are requested from the ElevenLabs TTS API using the low-latency `eleven_turbo_v2_5` model, accelerated to a natural `1.2x` speaking pace, and cached locally.
+
+---
+
+## 🌐 Supported Languages (100+)
+
+LanguX supports all of the following languages:
 
 Afrikaans, Albanian, Amharic, Arabic, Armenian, Azerbaijani, Basque, Belarusian, Bengali, Bosnian, Bulgarian, Catalan, Cebuano, Chinese (Simplified), Chinese (Traditional), Corsican, Croatian, Czech, Danish, Dutch, English, Esperanto, Estonian, Finnish, French, Frisian, Galician, Georgian, German, Greek, Gujarati, Haitian Creole, Hausa, Hawaiian, Hebrew, Hindi, Hmong, Hungarian, Icelandic, Igbo, Indonesian, Irish, Italian, Japanese, Javanese, Kannada, Kazakh, Khmer, Kinyarwanda, Korean, Kurdish, Kyrgyz, Lao, Latin, Latvian, Lithuanian, Luxembourgish, Macedonian, Malagasy, Malay, Malayalam, Maltese, Maori, Marathi, Mongolian, Myanmar (Burmese), Nepali, Norwegian, Nyanja (Chichewa), Odia (Oriya), Pashto, Persian, Polish, Portuguese, Punjabi, Romanian, Russian, Samoan, Scots Gaelic, Serbian, Sesotho, Shona, Sindhi, Sinhala, Slovak, Slovenian, Somali, Spanish, Sundanese, Swahili, Swedish, Tagalog (Filipino), Tajik, Tamil, Tatar, Telugu, Thai, Turkish, Turkmen, Ukrainian, Urdu, Uyghur, Uzbek, Vietnamese, Welsh, Xhosa, Yiddish, Yoruba, Zulu.
 
@@ -49,36 +74,28 @@ Afrikaans, Albanian, Amharic, Arabic, Armenian, Azerbaijani, Basque, Belarusian,
 
 ## 🛠 Tech Stack
 
-- **Frontend Core:** Vanilla HTML5, CSS3, JavaScript (ES6+)
-- **Styling:** Custom CSS with CSS Variables, Flexbox, CSS Grid, and Keyframe Animations
-- **Translation APIs:** Google Translate API (Unofficial Endpoint), MyMemory API (Fallback)
-- **Audio/TTS:** ElevenLabs API (`eleven_turbo_v2_5` model), Web Speech API (`window.speechSynthesis`)
-- **Fonts:** 'DM Sans' (Google Fonts)
-- **Icons:** Inline SVG Icons
+- **Frontend Core:** HTML5, CSS3 (CSS Grid, Variables, Keyframe Animations), Vanilla JavaScript (ES6)
+- **APIs:** Google Translate API, MyMemory Translation API, ElevenLabs TTS API
+- **Local Utilities:** LocalStorage (user preference persistence), Clipboard API (async navigator copy), Web Speech Synthesis API
 
 ---
 
-## 🚀 How to Run (Local Setup)
+## 🚀 How to Run
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/poovarasu638178-rgb/CodeAlpha_Langux.git
+   git clone https://github.com/poovarasu638178-rgb/codealpha_tasks.git
    ```
-2. **Navigate to the directory:**
+2. **Navigate to the task directory:**
    ```bash
-   cd CodeAlpha_Langux
+   cd codealpha_tasks/Task3_LangUX
    ```
-3. **Start a local server:**
-   You can use Node, Python, or Live Server. For example, with Node:
+3. **Start a local HTTP server:**
    ```bash
-   node server.js
-   ```
-   *Alternatively, if you have python installed:*
-   ```bash
-   python3 -m http.server 3000
+   python3 -m http.server 8080
    ```
 4. **Open in Browser:**
-   Navigate to `http://localhost:3000` to start translating!
+   Go to `http://localhost:8080` to start translating!
 
 ---
 
@@ -87,21 +104,14 @@ Afrikaans, Albanian, Amharic, Arabic, Armenian, Azerbaijani, Basque, Belarusian,
 ```text
 LanguX/
 │
-├── index.html        # The main structural markup and UI
-├── style.css         # All styling, animations, and glassmorphism themes
-├── script.js         # Core logic: chunking, API calls, custom dropdowns, TTS
-├── server.js         # Basic Node.js server for local hosting
-└── README.md         # You are here!
+├── index.html        # Structure and core interface elements
+├── style.css         # UI variables, layout grid, fonts, and styling
+├── script.js         # Text chunking, translation APIs, custom select, and TTS logic
+├── server.js         # Node.js server for local static hosting
+├── vercel.json       # Deployment configuration file
+├── favicon.png       # Application icon
+└── README.md         # Documentation
 ```
-
----
-
-## 🔌 API Documentation
-
-LanguX relies on a multi-tiered API approach for stability and speed:
-1. **Google Translate (Primary):** `https://translate.googleapis.com/translate_a/single`
-2. **MyMemory Translation (Fallback):** `https://api.mymemory.translated.net/get`
-3. **ElevenLabs TTS (English Audio):** `https://api.elevenlabs.io/v1/text-to-speech/N2lVS1w4EtoT3dr4eOWO/stream` (Powered by the `eleven_turbo_v2_5` model for latency optimization).
 
 ---
 
@@ -116,7 +126,7 @@ Built by **Poovarasu S**
 
 ## 📄 License
 
-This project is licensed under the **MIT License**. You are free to use, modify, and distribute this software.
+This project is licensed under the **MIT License**.
 
 ---
 
