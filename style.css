@@ -19,8 +19,8 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Always show scrollbar to prevent layout shift when content expands */
-  overflow-y: scroll;
+  /* Let browser manage scrollbar based on content overflow */
+  overflow-y: auto;
 }
 
 /* ---- Hide legacy decorative elements ---- */
