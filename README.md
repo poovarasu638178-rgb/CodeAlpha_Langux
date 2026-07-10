@@ -11,8 +11,6 @@
 
 [![Live Demo](https://img.shields.io/badge/Launch-Live_Demo-5A2132?style=for-the-badge&logo=vercel)](https://langux.vercel.app/)
 
-<img src="preview.png" alt="LanguX Preview" width="100%" />
-
 </div>
 
 ---
