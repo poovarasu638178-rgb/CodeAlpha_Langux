@@ -25,15 +25,15 @@ Equipped with sentence-aware text chunking and streaming ElevenLabs API integrat
 
 ## ✨ Features
 
-✅ **Multi-Language Support**: Instantly translate text between over 100 global languages.
-✅ **Instant Translation**: Trigger automatic debounced translations as you type, or use manual translation controls.
-✅ **50,000 Character Limit**: Process large documents easily without experiencing browser lag or performance drops.
-✅ **Clean UI**: Interact with a single-viewport, glassmorphism layout optimized for both laptop and mobile screens.
-✅ **Smart Sentence Chunking**: Split input text at sentence boundaries into 1500-character units to prevent API request drops.
-✅ **Custom Speech Synthesis (TTS)**: Stream premium English audio playback using the ElevenLabs API, or fallback to native device TTS.
-✅ **Keyboard Shortcuts**: Execute quick translations using `Cmd/Ctrl + Enter` and copy output using `Cmd/Ctrl + Shift + C`.
-✅ **Searchable Custom Dropdowns**: Discover and filter target languages quickly using searchable select menus.
-✅ **Copy-to-Clipboard & Toasts**: Copy your translation output with one click and see animated toast notifications.
+- ✅ **Multi-Language Support**: Instantly translate text between over 100 global languages.
+- ✅ **Instant Translation**: Trigger automatic debounced translations as you type, or use manual translation controls.
+- ✅ **50,000 Character Limit**: Process large documents easily without experiencing browser lag or performance drops.
+- ✅ **Clean UI**: Interact with a single-viewport, glassmorphism layout optimized for both laptop and mobile screens.
+- ✅ **Smart Sentence Chunking**: Split input text at sentence boundaries into 1500-character units to prevent API request drops.
+- ✅ **Custom Speech Synthesis (TTS)**: Stream premium English audio playback using the ElevenLabs API, or fallback to native device TTS.
+- ✅ **Keyboard Shortcuts**: Execute quick translations using `Cmd/Ctrl + Enter` and copy output using `Cmd/Ctrl + Shift + C`.
+- ✅ **Searchable Custom Dropdowns**: Discover and filter target languages quickly using searchable select menus.
+- ✅ **Copy-to-Clipboard & Toasts**: Copy your translation output with one click and see animated toast notifications.
 
 ---
 
